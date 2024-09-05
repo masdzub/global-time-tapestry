@@ -2,6 +2,12 @@
 
 Global Time Tapestry is a web application that displays time across various time zones around the world. This app allows users to easily view their local time as well as the time in other major cities simultaneously.
 
+## Demo
+
+Check out the live demo: [Global Time Tapestry](https://time.masdzub.com)
+![image](https://github.com/user-attachments/assets/8595a72b-b784-4be9-a6bd-13ef636966c9)
+
+
 ## Features
 
 - Displays user's local time
