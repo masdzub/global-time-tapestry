@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Time Tapestry - World Clock and Time Zone Viewer</title>
+    <meta name="description" content="View current times across multiple time zones with Global Time Tapestry. A beautiful, interactive world clock displaying local and international times.">
+    <meta name="keywords" content="world clock, time zones, global time, international clock, time converter">
+    <meta name="author" content="Your Name">
+    <link rel="canonical" href="https://yourdomain.com/global-time-tapestry">
+    <meta property="og:title" content="Global Time Tapestry - World Clock and Time Zone Viewer">
+    <meta property="og:description" content="View current times across multiple time zones with Global Time Tapestry. A beautiful, interactive world clock displaying local and international times.">
+    <meta property="og:image" content="https://yourdomain.com/path-to-your-image.jpg">
+    <meta property="og:url" content="https://yourdomain.com/global-time-tapestry">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="https://ucarecdn.com/2a043e57-599b-44f6-8145-d61f3d8b488d/-/scale_crop/50x50/" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data-10-year-range.min.js" defer></script>
+    <style>
+        /* Inline critical CSS */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #3494E6 0%, #EC6EAD 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center">
+    <header>
+        <h1 class="text-5xl font-bold mb-8 text-center text-white">
+            Global Time Tapestry
+        </h1>
+    </header>
+    <main id="app" class="container mx-auto p-8">
+        <section class="flex flex-col items-center">
+            <article :class="['clock-card p-8 mb-8 w-full max-w-2xl text-center', localDayNight === '☀️ Day' ? 'day' : 'night']">
+                <h2 class="text-3xl font-semibold mb-3">Local Time</h2>
+                <p class="text-6xl font-light mb-4">{{ localTime }}</p>
+                <p class="text-xl">{{ localDate }}</p>
+                <p class="text-lg">{{ localTimezone }}</p>
+                <p class="text-lg">{{ localDayNight }}</p>
+            </article>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+                <article v-for="clock in clocks" :key="clock.name" :class="['clock-card p-6 text-center', clock.dayNight === '☀️ Day' ? 'day' : 'night']">
+                    <h2 class="text-2xl font-semibold mb-3">{{ clock.name }}</h2>
+                    <p class="text-3xl font-light mb-2">{{ clock.time }}</p>
+                    <p class="text-sm">{{ clock.date }}</p>
+                    <p class="text-sm">{{ clock.timezoneOffset }}</p>
+                    <p class="text-sm">{{ clock.dayNight }}</p>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer class="w-full text-center p-4 text-white">
+        <p>View the source code on <a href="https://github.com/masdzub/global-time-tapestry" class="underline hover:text-blue-300 transition-colors duration-300" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+    </footer>
+    <script src="clocks.js" defer></script>
+    <script src="app.js" defer></script>
+</body>
+</html>
