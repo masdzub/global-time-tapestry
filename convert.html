@@ -6,9 +6,8 @@
     <title>Time Zone Converter</title>
     <meta name="description" content="Convert time between different time zones easily with this interactive time zone converter.">
     <meta name="keywords" content="time zone converter, world clock, time zones">
-    <meta name="author" content="Your Name">
+    <meta name="author" content="Dzubayyan Ahmad">
     <link rel="icon" href="https://ucarecdn.com/2a043e57-599b-44f6-8145-d61f3d8b488d/-/scale_crop/50x50/" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/css/styles.css">
     <script src="https://cdn.tailwindcss.com" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data.min.js" defer></script>
@@ -25,6 +24,12 @@
             justify-content: center;
         }
     </style>
+    <link rel="stylesheet" href="./assets/css/styles.css" media="print" onload="this.media='all'">
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
 </head>
 <body>
     <header>
