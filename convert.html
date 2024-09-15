@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Zone Converter</title>
+    <meta name="description" content="Convert time between different time zones easily with this interactive time zone converter.">
+    <meta name="keywords" content="time zone converter, world clock, time zones">
+    <meta name="author" content="Your Name">
+    <link rel="icon" href="https://ucarecdn.com/2a043e57-599b-44f6-8145-d61f3d8b488d/-/scale_crop/50x50/" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data.min.js" defer></script>
+    <script src="./assets/js/timezones.js" defer></script>
+    <style>
+        /* Inline critical CSS */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #3494E6 0%, #EC6EAD 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="text-5xl font-bold mb-8 text-center text-white">
+            Time Zones Converter
+        </h1>
+    </header>
+    <main class="main-container">
+        <form id="converterForm" class="converter-form clock-card" aria-labelledby="converterForm">
+            <div class="input-group">
+                <label for="localTimezone" class="input-label">Origin Time Zone:</label>
+                <select id="localTimezone" class="input-select" aria-label="Select your local timezone"></select>
+            </div>
+            <div class="input-group">
+                <label for="targetTimezone" class="input-label">Destination Time Zone:</label>
+                <select id="targetTimezone" class="input-select" aria-label="Select the target timezone"></select>
+            </div>
+            <div class="input-group">
+                <label for="inputDate" class="input-label">Date:</label>
+                <input type="date" id="inputDate" class="input-field" aria-label="Enter the date">
+            </div>
+            <div class="input-group">
+                <label for="inputTime" class="input-label">Time:</label>
+                <input type="time" id="inputTime" class="input-field" aria-label="Enter the time">
+            </div>
+            <button type="button" class="btn" onclick="convertTime()" aria-label="Convert time">Convert</button>
+        </form>
+        <section id="results" class="results-section">
+            <div class="result-card clock-card day">
+                <h2 class="result-title">Origin Time</h2>
+                <p id="localDateTime" class="result-text"></p>
+            </div>
+            <div class="result-card clock-card">
+                <h2 class="result-title">Converted Time</h2>
+                <p id="convertedDateTime" class="result-text"></p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p><a href="./index.html" class="underline hover:text-blue-300 transition-colors duration-300" target="_blank" rel="noopener noreferrer">Time Tapestry</a></p>
+        <p>View the source code on <a href="https://github.com/masdzub/global-time-tapestry" class="underline hover:text-blue-300 transition-colors duration-300" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+    </footer>
+</body>
+</html>
