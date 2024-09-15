@@ -17,6 +17,7 @@ Check out the live demo: [Global Time Tapestry](https://time.masdzub.com)
 - UTC offset information for each time zone
 - Responsive design that works across various screen sizes
 - Attractive user interface with hover effects on clock cards
+- Time Zone Converter
 
 ## Technologies Used
 
