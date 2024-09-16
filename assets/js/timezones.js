@@ -159,15 +159,15 @@ document.addEventListener('DOMContentLoaded', () => {
         return option;
     }
 
-    function populateSelect(selectId) {
-        const selectElement = document.getElementById(selectId);
-        timeZones.forEach(tz => selectElement.appendChild(createOption(tz)));
+    function populateSelect(datalistId) {
+        const datalistElement = document.getElementById(datalistId);
+        timeZones.forEach(tz => datalistElement.appendChild(createOption(tz)));
     }
 
     function setCurrentDateTime() {
-        const now = new Date();
-        document.getElementById('inputDate').value = now.toISOString().split('T')[0]; // YYYY-MM-DD
-        document.getElementById('inputTime').value = now.toTimeString().split(' ')[0].slice(0, 5); // HH:mm
+        const now = moment();
+        document.getElementById('inputDate').value = now.format('YYYY-MM-DD');
+        document.getElementById('inputTime').value = now.format('HH:mm');
     }
 
     function formatDateTime(dateTime, timezone) {
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('convertedDateTime').innerHTML = formatDateTime(convertedDateTime, targetTimezone);
     }
 
-    ['localTimezone', 'targetTimezone'].forEach(populateSelect);
+    ['localTimezones', 'targetTimezones'].forEach(populateSelect);
     setCurrentDateTime();
     document.querySelector('.btn').addEventListener('click', convertTime);
 });

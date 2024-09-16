@@ -41,11 +41,13 @@
         <form id="converterForm" class="converter-form clock-card" aria-labelledby="converterForm">
             <div class="input-group">
                 <label for="localTimezone" class="input-label">Origin Time Zone:</label>
-                <select id="localTimezone" class="input-select" aria-label="Select your local timezone"></select>
+                <input list="localTimezones" id="localTimezone" class="input-field" aria-label="Select or type your local timezone">
+                <datalist id="localTimezones"></datalist>
             </div>
             <div class="input-group">
                 <label for="targetTimezone" class="input-label">Destination Time Zone:</label>
-                <select id="targetTimezone" class="input-select" aria-label="Select the target timezone"></select>
+                <input list="targetTimezones" id="targetTimezone" class="input-field" aria-label="Select or type the target timezone">
+                <datalist id="targetTimezones"></datalist>
             </div>
             <div class="input-group">
                 <label for="inputDate" class="input-label">Date:</label>
