@@ -48,13 +48,13 @@
     <main id="app" class="container mx-auto p-8">
         <section class="flex flex-col items-center">
             <article :class="['clock-card p-8 mb-8 w-full max-w-2xl text-center', localDayNight === '☀️ Day' ? 'day' : 'night']">
-                <h2 class="text-3xl font-semibold mb-3">Local Time</h2>
+                <h2 class="text-3xl font-semibold mb-3">Your Time</h2>
                 <p class="text-6xl font-light mb-4">{{ localTime }}</p>
                 <p class="text-xl">{{ localDate }}</p>
                 <p class="text-lg">{{ localTimezone }}</p>
                 <p class="text-lg">{{ localDayNight }}</p>
             </article>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
                 <article v-for="clock in clocks" :key="clock.name" :class="['clock-card p-6 text-center', clock.dayNight === '☀️ Day' ? 'day' : 'night']">
                     <h2 class="text-2xl font-semibold mb-3">{{ clock.name }}</h2>
                     <p class="text-3xl font-light mb-2">{{ clock.time }}</p>
