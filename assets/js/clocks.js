@@ -7,5 +7,6 @@ const additionalClocks = [
     { name: "London", timezone: "Europe/London" },
     { name: "Toronto", timezone: "America/Toronto" },
     { name: "Mexico City", timezone: "America/Mexico_City" },
-    { name: "Vancouver", timezone: "America/Vancouver" }
+    { name: "Vancouver", timezone: "America/Vancouver" },
+    { name: "Ann Arbor", timezone: "America/Detroit" }
 ];
